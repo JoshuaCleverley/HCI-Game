@@ -13,7 +13,7 @@ function MainMenu() {
     let optionsButton = new Clickable(20, 90);
     optionsButton.text = "Options";
     optionsButton.onPress = function() {
-      mgr.showScene(OptionsMenu)
+      mgr.showScene(OptionsMenu);
     }
 
     buttons.push(startButton);
