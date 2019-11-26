@@ -2,36 +2,42 @@
 function SubjectMenu() {
   // Setup main menu
   this.enter = function() {
-    buttons = [];
+    this.buttons = [];
 
+    // Create home button and add to buttons list
     let homeButton = new Clickable(20, 20);
     homeButton.text = "Home";
     homeButton.onPress = function() {
+      // Go back to main menu
       mgr.showScene(MainMenu);
     }
+    this.buttons.push(homeButton);
 
-    let numeracyButton = new Clickable(20, 90);
+    // Create numeracy game button and add it to buttons list
+    let numeracyButton = new Clickable(20, 100);
     numeracyButton.text = "Numeracy";
     numeracyButton.onPress = function() {
-      console.log("numeracy");
+      // Start numeracy game
+      mgr.showScene(NumeracyGame);
     }
+    this.buttons.push(numeracyButton);
 
-    let literacyButton = new Clickable(20, 160);
+    // Create literacy game button and add it to buttons list
+    let literacyButton = new Clickable(20, 180);
     literacyButton.text = "Literacy";
     literacyButton.onPress = function() {
-      console.log("literacy");
+      // Start literacy game
+      mgr.showScene(LiteracyGame)
     }
-
-    buttons.push(homeButton);
-    buttons.push(numeracyButton);
-    buttons.push(literacyButton);
+    this.buttons.push(literacyButton);
   }
 
   // Main loop for main menu
   this.draw = function() {
+    // Clear background and draw buttons
     clearBackground();
 
-    for (const button of buttons) {
+    for (const button of this.buttons) {
       button.draw();
     }
   }
