@@ -10,7 +10,7 @@ function MainMenu() {
       mgr.showScene(SubjectMenu);
     }
 
-    let optionsButton = new Clickable(20, 90);
+    let optionsButton = new Clickable(20, 100);
     optionsButton.text = "Options";
     optionsButton.onPress = function() {
       mgr.showScene(OptionsMenu);

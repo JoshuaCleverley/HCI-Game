@@ -10,13 +10,13 @@ function SubjectMenu() {
       mgr.showScene(MainMenu);
     }
 
-    let numeracyButton = new Clickable(20, 90);
+    let numeracyButton = new Clickable(20, 100);
     numeracyButton.text = "Numeracy";
     numeracyButton.onPress = function() {
       console.log("numeracy");
     }
 
-    let literacyButton = new Clickable(20, 160);
+    let literacyButton = new Clickable(20, 180);
     literacyButton.text = "Literacy";
     literacyButton.onPress = function() {
       console.log("literacy");
