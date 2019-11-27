@@ -40,6 +40,8 @@ p5.prototype.registerMethod('post', p5.prototype.runGUI);
 function Clickable(x,y){
 	this.x = x || 0;			//X position of the clickable
 	this.y = y || 0;			//Y position of the clickable
+	this.centerX = false; // Set center X
+	this.centerY = false; // Set center Y
 	this.width = 200;			//Width of the clickable
 	this.height = 75;			//Height of the clickable
 	this.color = "#FFFFFF";			//Background color of the clickable
@@ -49,7 +51,7 @@ function Clickable(x,y){
 	this.text = "Press Me";			//Text of the clickable
 	this.textColor = "#000000";		//Color for the text shown
 	this.textSize = 20;			//Size for the text shown
-	this.textFont = "sans-serif";
+	this.textFont = "sans-serif";		// Text font
 
 	this.onHover = function(){
 		//This function is ran when the clickable is hovered but not
@@ -66,8 +68,7 @@ function Clickable(x,y){
 
 	this.onPress = function(){
 		//This function is ran when the clickable is pressed.
-		this.color = "#444444";
-		this.textColor = "#111111";
+
 	}
 
 	this.onRelease = function(){
@@ -92,6 +93,17 @@ function Clickable(x,y){
 			this.textSize = options.smallTextSize;
 		} else {
 			this.textSize = options.bigTextSize;
+		}
+
+		if (this.centerX) {
+			this.x = width/2 - this.width/2;
+		} else {
+			this.x = x;
+		}
+		if (this.centerY) {
+			this.y = height/2 - this.width/2;
+		} else {
+			this.y = y;
 		}
 
 		// Draw button
