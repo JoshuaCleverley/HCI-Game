@@ -9,10 +9,21 @@ let options = {
 
 // Declare global variables
 let mgr;
+let backgrounds;
+let graphics;
 
 // Main program preload
 function preload() {
-  //options.font = loadFont('../assets/fonts/roboto/Roboto-Regular.ttf');
+
+  backgrounds = {
+    //MainMenu: loadImage('../assets/bg/MainMenu.png'),
+    //OptionsMenu: loadImage('../assets/bg/OptionsMenu.png'),
+    //SubjectMenu: loadImage('../assets/bg/SubjectMenu.png'),
+  }
+
+  graphics = {
+
+  }
 }
 
 // Main program setup
@@ -27,6 +38,7 @@ function setup() {
   mgr.addScene(MainMenu);
   mgr.addScene(OptionsMenu);
   mgr.addScene(SubjectMenu);
+  mgr.addScene(CreditsMenu);
 
   // Add game screens to scene manager
   mgr.addScene(LiteracyGame);
