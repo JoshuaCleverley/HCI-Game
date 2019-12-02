@@ -5,13 +5,14 @@ let options = {
   textMode: "small",
   smallTextSize: 20,
   bigTextSize: 40,
+  frameRate: 50,
 }
 
 // Declare global variables
 let mgr;
 let backgrounds;
 let graphics;
-
+let cursor;
 // Main program preload
 function preload() {
 
@@ -32,7 +33,11 @@ function setup() {
   createCanvas(options.screenWidth, options.screenHeight);
   clearBackground();
 
+  frameRate(options.frameRate);
+  noCursor();
+
   mgr = new SceneManager(); // Create the scene manager object
+  cursor = new Cursor();
 
   // Add menu screens to scene manager
   mgr.addScene(MainMenu);

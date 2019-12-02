@@ -4,6 +4,9 @@ function NumeracyGame() {
   }
 
   this.draw = function() {
+    // Clear background and draw buttons
+    clearBackground();
 
+    cursor.Draw();
   }
 }

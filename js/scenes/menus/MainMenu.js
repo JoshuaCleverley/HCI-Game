@@ -43,5 +43,7 @@ function MainMenu() {
     for (const button of this.buttons) {
       button.draw();
     }
+
+    cursor.Draw();
   }
 }
