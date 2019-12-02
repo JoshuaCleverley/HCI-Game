@@ -32,7 +32,7 @@ function OptionsMenu() {
   // Main loop for main menu
   this.draw = function() {
     // Clear background and draw buttons
-    clearBackground();
+    clearBackground(backgrounds.optionsMenu);
 
     for (const button of this.buttons) {
       button.draw();

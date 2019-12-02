@@ -10,17 +10,30 @@ let options = {
 
 // Declare global variables
 let mgr;
-let backgrounds;
+let backgrounds = {};
 let graphics;
 let cursor;
+
 // Main program preload
 function preload() {
+  loadImage('assets/bg/MainMenu.png', (res) => {
+    backgrounds.mainMenu = res;
+  }, (err) => {
+    console.log(err);
+  });
 
-  backgrounds = {
-    //MainMenu: loadImage('../assets/bg/MainMenu.png'),
-    //OptionsMenu: loadImage('../assets/bg/OptionsMenu.png'),
-    //SubjectMenu: loadImage('../assets/bg/SubjectMenu.png'),
-  }
+  loadImage('assets/bg/OptionsMenu.png', (res) => {
+    backgrounds.optionsMenu = res;
+  }, (err) => {
+    console.log(err);
+  });
+
+  loadImage('assets/bg/SubjectMenu.png', (res) => {
+    backgrounds.subjectMenu = res;
+  }, (err) => {
+    console.log(err);
+  });
+
 
   graphics = {
 
