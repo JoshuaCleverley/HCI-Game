@@ -1,7 +1,5 @@
 // Declare options for the game
 let options = {
-  screenWidth: 1024,
-  screenHeight: 720,
   textMode: "small",
   smallTextSize: 20,
   bigTextSize: 40,
@@ -12,7 +10,7 @@ let options = {
 let mgr;
 let backgrounds = {};
 let graphics;
-let cursor;
+let customCursor;
 
 // Main program preload
 function preload() {
@@ -43,14 +41,13 @@ function preload() {
 // Main program setup
 function setup() {
   // Create and clear the screen
-  createCanvas(options.screenWidth, options.screenHeight);
+  createCanvas(windowWidth, windowHeight);
   clearBackground();
 
   frameRate(options.frameRate);
-  noCursor();
 
   mgr = new SceneManager(); // Create the scene manager object
-  cursor = new Cursor();
+  customCursor = new Cursor();
 
   // Add menu screens to scene manager
   mgr.addScene(MainMenu);

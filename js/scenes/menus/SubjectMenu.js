@@ -2,6 +2,8 @@
 function SubjectMenu() {
   // Setup main menu
   this.enter = function() {
+    cursor();
+
     this.buttons = [];
 
     // Create home button and add to buttons list
@@ -43,7 +45,5 @@ function SubjectMenu() {
     for (const button of this.buttons) {
       button.draw();
     }
-
-    cursor.Draw();
   }
 }

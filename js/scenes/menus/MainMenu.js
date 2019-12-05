@@ -2,6 +2,8 @@
 function MainMenu() {
   // Setup main menu
   this.enter = function() {
+    cursor();
+
     this.buttons = [];
 
     // Create and add start button to button list
@@ -43,7 +45,5 @@ function MainMenu() {
     for (const button of this.buttons) {
       button.draw();
     }
-
-    cursor.Draw();
   }
 }

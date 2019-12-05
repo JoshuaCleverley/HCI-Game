@@ -2,6 +2,8 @@
 function CreditsMenu() {
   // Setup main menu
   this.enter = function() {
+    cursor();
+
     this.buttons = [];
 
     // Create and add start button to button list
@@ -23,7 +25,5 @@ function CreditsMenu() {
     for (const button of this.buttons) {
       button.draw();
     }
-
-    cursor.Draw();
   }
 }

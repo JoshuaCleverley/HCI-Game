@@ -1,13 +1,11 @@
 // Graphics code
 function clearBackground(bg) {
+  resizeCanvas(windowWidth-2, windowHeight-2);
   if (bg) {
     background(bg);
   } else {
     background(81);
   }
-  noFill();
-  stroke(255);
-  rect(0, 0, width, height);
 }
 
 function drawCrosshair(x, y) {

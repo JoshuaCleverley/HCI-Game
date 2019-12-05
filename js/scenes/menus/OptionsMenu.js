@@ -2,6 +2,8 @@
 function OptionsMenu() {
   // Setup main menu
   this.enter = function() {
+    cursor();
+
     this.buttons = [];
 
     // Create home button and add it to button list
@@ -37,7 +39,5 @@ function OptionsMenu() {
     for (const button of this.buttons) {
       button.draw();
     }
-
-    cursor.Draw();
   }
 }
