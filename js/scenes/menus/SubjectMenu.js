@@ -21,7 +21,7 @@ function SubjectMenu() {
     this.buttons = [];
 
     // Create home button and add to buttons list
-    let homeButton = new Clickable(0, height/2 + 30);
+    let homeButton = new Clickable(0, height / 2 + 30);
     homeButton.text = "Home";
     homeButton.centerX = true;
     homeButton.onPress = function() {
@@ -31,7 +31,7 @@ function SubjectMenu() {
     this.buttons.push(homeButton);
 
     // Create numeracy game button and add it to buttons list
-    let numeracyButton = new Clickable(0, height/2 + 30 + 95);
+    let numeracyButton = new Clickable(0, height / 2 + 30 + 95);
     numeracyButton.text = "Numeracy";
     numeracyButton.centerX = true;
     numeracyButton.onPress = function() {
@@ -41,7 +41,7 @@ function SubjectMenu() {
     this.buttons.push(numeracyButton);
 
     // Create literacy game button and add it to buttons list
-    let literacyButton =new Clickable(0, height/2 + 30 + 2 * 95);
+    let literacyButton = new Clickable(0, height / 2 + 30 + 2 * 95);
     literacyButton.text = "Literacy";
     literacyButton.centerX = true;
     literacyButton.onPress = function() {

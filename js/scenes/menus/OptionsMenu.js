@@ -21,7 +21,7 @@ function OptionsMenu() {
     this.buttons = [];
 
     // Create home button and add it to button list
-    let homeButton = new Clickable(0, height/2 + 30);;
+    let homeButton = new Clickable(0, height / 2 + 30);;
     homeButton.text = "Home";
     homeButton.centerX = true;
     homeButton.onPress = function() {
@@ -31,14 +31,14 @@ function OptionsMenu() {
     this.buttons.push(homeButton);
 
     // Create text size button and add it to button list
-    let textButton = new Clickable(0, height/2 + 30 + 95);
+    let textButton = new Clickable(0, height / 2 + 30 + 95);
     textButton.text = "Aa";
     textButton.centerX = true;
     textButton.onPress = function() {
       // Switch text size to small or big
       if (options.textMode == "small") { // If text is currently smaller
         options.textMode = "big";
-      } else {                           // If text is currently bigger
+      } else { // If text is currently bigger
         options.textMode = "small";
       }
     }
