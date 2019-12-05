@@ -1,8 +1,6 @@
-#
-License information
+# License information
 
-###
-License information for all libraries that I am using in this software
+##### License information for all libraries that I am using in this software
 
 Roboto (font):
 > Apache Licence 2.0 [https://www.apache.org/licenses/LICENSE-2.0]
