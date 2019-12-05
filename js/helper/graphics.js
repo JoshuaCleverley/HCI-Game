@@ -1,6 +1,6 @@
 // Graphics code
 function clearBackground(bg) {
-  resizeCanvas(windowWidth-2, windowHeight-2);
+  resizeCanvas(windowWidth, windowHeight);
   if (bg) {
     background(bg);
   } else {

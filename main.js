@@ -6,6 +6,7 @@ function createWindow() {
   win = new BrowserWindow({
     width: 1024,
     height: 720,
+    icon: __dirname + '/assets/img/logo.png',
     webPreferences: {
       nodeIntegration: true,
     }
