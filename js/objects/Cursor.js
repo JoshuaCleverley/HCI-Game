@@ -13,21 +13,16 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-function clearBackground() {
-  resizeCanvas(windowWidth, windowHeight);
-  background(81);
-}
+class Cursor {
+  Draw() {
+    noFill();
+    this.FollowMouse();
+    stroke(0);
+    drawCrosshair(this.x, this.y);
+  }
 
-function drawCrosshair(x, y) {
-  strokeWeight(1.5);
-  ellipse(x, y, 30);
-
-  line(x, y + 10, x, y + 20);
-  line(x + 10, y, x + 20, y);
-  line(x, y - 10, x, y - 20);
-  line(x - 10, y, x - 20, y);
-
-  stroke(255, 0, 0, 100);
-  strokeWeight(4);
-  point(x, y);
+  FollowMouse() {
+    this.x = mouseX;
+    this.y = mouseY;
+  }
 }

@@ -11,8 +11,7 @@ I have also made this in order to complete an Assignment in a Human-Computer Int
 
 During the course of this project I have learned a variety of skills:
 1\. Improved my knowledge of JavaScript
-2\. Learned how to use Electron to create standalone apps using HTML/CSS/JS
-3\. Learned to use p5.clickable.js and SceneManager.js to create UI functionality
+2\. Learned to use p5.clickable.js and SceneManager.js to create UI functionality
 
 ### Features
 
@@ -20,5 +19,4 @@ During the course of this project I have learned a variety of skills:
 -   Multiple menus
 -   Change text size in order to accommodate for people with visual impairments
 -   TODO: Create game functionality
--   TODO: Add lists of questions in .csv or .json formats
--   TODO: Add graphics and sounds
+-   TODO: Add sounds

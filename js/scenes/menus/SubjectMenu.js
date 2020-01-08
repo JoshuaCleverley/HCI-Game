@@ -54,7 +54,7 @@ function SubjectMenu() {
   // Main loop for main menu
   this.draw = function() {
     // Clear background and draw buttons
-    clearBackground(backgrounds.subjectMenu);
+    clearBackground();
 
     for (const button of this.buttons) {
       button.draw();

@@ -13,14 +13,40 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+ships = [];
+
 function LiteracyGame() {
   this.enter = function() {
     noCursor();
+    for (i in ships) {
+      ships[i].Init();
+    }
   }
 
   this.draw = function() {
     clearBackground();
 
+    if (frameCount % 40 == 0) {
+      ship = new Ship();
+      ship.Init();
+      ships.push(ship);
+    }
+
+    for (i in ships) {
+      if (ships[i].Update()) {
+        ships.splice(i, 1);
+      } else {
+        ships[i].Draw();
+      }
+    }
     customCursor.Draw();
+  }
+
+  this.mouseClicked = function() {
+    for (i in ships) {
+      if (ships[i].Click()) {
+        ships.splice(i, 1);
+      }
+    }
   }
 }

@@ -2,6 +2,10 @@
 
 #### License information for all libraries that I am using in this software
 
+Roboto (font):
+
+> Apache Licence 2.0 [https://www.apache.org/licenses/LICENSE-2.0]
+
 p5.js (graphics):
 
 > GNU Lesser GPL [https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html]
