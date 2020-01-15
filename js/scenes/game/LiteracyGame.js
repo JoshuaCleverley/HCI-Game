@@ -13,22 +13,40 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-ships = [];
-
 function LiteracyGame() {
   this.enter = function() {
     noCursor();
-    for (i in ships) {
-      ships[i].Init();
-    }
+    currentQuestion = literacyQuestions[floor(random() * literacyQuestions.length)];
+    ships = [];
+    score = 0;
+    lives = 3;
   }
 
   this.draw = function() {
     clearBackground();
 
+    if (lives < 0) {
+        mgr.showScene(GameOverMenu);
+    }
+
+    fill(200);
+    stroke(0);
+    strokeWeight(2);
+    rect(0, 0, windowWidth/4.5, windowHeight);
+
+    fill(0);
+    strokeWeight(0);
+    textAlign(LEFT, TOP);
+    text("The friendly ships will have " + currentQuestion.question + " on them!", 20, 20, windowWidth/4.5-20, 200);
+    text("Score: " + score, 20, 210, windowWidth-20, 230);
+    text("Lives: " + lives, 20, 240, windowWidth-20, 260);
+
+    gameButton.draw();
+
     if (frameCount % 40 == 0) {
+      let shipAnswer = literacyQuestions[floor(random() * literacyQuestions.length)].answer;
       ship = new Ship();
-      ship.Init();
+      ship.Init(windowWidth/4.5, shipAnswer);
       ships.push(ship);
     }
 
@@ -39,6 +57,7 @@ function LiteracyGame() {
         ships[i].Draw();
       }
     }
+
     customCursor.Draw();
   }
 

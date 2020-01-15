@@ -16,12 +16,56 @@
 function NumeracyGame() {
   this.enter = function() {
     noCursor();
+    currentQuestion = numeracyQuestions[floor(random() * numeracyQuestions.length)];
+    ships = [];
+    score = 0;
+    lives = 3;
   }
 
   this.draw = function() {
-    // Clear background and draw buttons
     clearBackground();
 
+    if (lives < 0) {
+        mgr.showScene(GameOverMenu);
+    }
+
+    fill(200);
+    stroke(0);
+    strokeWeight(2);
+    rect(0, 0, windowWidth/4.5, windowHeight);
+
+    fill(0);
+    strokeWeight(0);
+    textAlign(LEFT, TOP);
+    text("The friendly ships will have " + currentQuestion.question + " on them!", 20, 20, windowWidth/4.5-20, 200);
+    text("Score: " + score, 20, 210, windowWidth-20, 230);
+    text("Lives: " + lives, 20, 240, windowWidth-20, 260);
+
+    gameButton.draw();
+
+    if (frameCount % 40 == 0) {
+      let shipAnswer = numeracyQuestions[floor(random() * numeracyQuestions.length)].answer;
+      ship = new Ship();
+      ship.Init(windowWidth/4.5, shipAnswer);
+      ships.push(ship);
+    }
+
+    for (i in ships) {
+      if (ships[i].Update()) {
+        ships.splice(i, 1);
+      } else {
+        ships[i].Draw();
+      }
+    }
+
     customCursor.Draw();
+  }
+
+  this.mouseClicked = function() {
+    for (i in ships) {
+      if (ships[i].Click()) {
+        ships.splice(i, 1);
+      }
+    }
   }
 }

@@ -13,16 +13,14 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-score = 0;
-missed = 0;
-
 class Ship {
-  Init() {
-    this.x = random(50, windowWidth-50);
+  Init(gameX, shipAnswer) {
+    this.answer = shipAnswer;
+    this.speed = 5;
+    this.width = 150;
+    this.height = 120;
+    this.x = random(this.width+gameX, windowWidth-this.width*2);
     this.y = -100;
-    this.speed = 6;
-    this.width = 50;
-    this.height = 85;
     this.alive = true;
   }
 
@@ -33,6 +31,11 @@ class Ship {
       strokeWeight(1);
       rectMode(CORNER);
       rect(this.x, this.y, this.width, this.height);
+
+      fill(0);
+      strokeWeight(0);
+      textAlign(CENTER, CENTER);
+      text(this.answer, this.x, this.y, this.width, this.height);
     } else {
       return
     }
@@ -42,8 +45,12 @@ class Ship {
     if (this.alive) {
       this.y += this.speed;
       if (this.y > windowHeight + this.height*2) {
+        if (currentQuestion.compare(this.answer)) {
+          score += 10;
+        } else {
+          lives -= 1;
+        }
         this.alive = false;
-        missed += 1;
         return true;
       }
     }
@@ -53,10 +60,15 @@ class Ship {
   Click() {
     if (mouseX > this.x && mouseX <= this.x + this.width && mouseY > this.y && mouseY <= this.y + this.height) {
       // Ship is shot
+      if (!currentQuestion.compare(this.answer)) {
+        score += 1;
+      } else {
+        lives -= 1;
+      }
       this.alive = false;
-      score += 1;
-      let total = score + missed;
-      console.log("SCORE: " + score + "/" + total);
+      console.log("SCORE: " + score);
+      console.log("LIVES: " + lives);
+      console.log("---------------");
       return true;
     } else {
       return false;
