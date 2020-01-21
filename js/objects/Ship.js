@@ -17,7 +17,7 @@ class Ship {
   Init(gameX, shipAnswer) {
     this.answer = shipAnswer;
     this.speed = 5;
-    this.width = 150;
+    this.width = 180;
     this.height = 120;
     this.x = random(this.width+gameX, windowWidth-this.width*2);
     this.y = -100;

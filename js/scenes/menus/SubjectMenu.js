@@ -56,6 +56,14 @@ function SubjectMenu() {
     // Clear background and draw buttons
     clearBackground();
 
+    textSize(100);
+    fill(240)
+    textAlign(CENTER, CENTER);
+    text("Choose a Subject", 50, 50, windowWidth-50, 150);
+    textSize(30);
+    instructionText = "Welcome to Word Smash!\nTo play, you need to figure out the answer to the question in the top left.\nOnce you have you must destroy all ships that don't show the answer to that question!\nAll friendly ships will show the correct answer to the question, so you should let them in!";
+    text(instructionText, 50, 150, windowWidth-50, 400);
+
     for (const button of this.buttons) {
       button.draw();
     }

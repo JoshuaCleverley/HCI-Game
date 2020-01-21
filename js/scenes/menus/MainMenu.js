@@ -56,6 +56,11 @@ function MainMenu() {
     // Clear background and draw buttons
     clearBackground();
 
+    textSize(100);
+    fill(240)
+    textAlign(CENTER, CENTER);
+    text("Word Smash: The Game", 50, 100, windowWidth-50, 200);
+
     for (const button of this.buttons) {
       button.draw();
     }
